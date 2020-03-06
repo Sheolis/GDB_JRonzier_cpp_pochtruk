@@ -1,10 +1,11 @@
-#include "moteur.h"
+#include "Poche.h"
+#include "Pochtruc.h"
+#include "Arena.h"
 
-using namespace std;
 
 int main()
 {
-    Moteur train("vapeurbleue");
-    train.setName("vapeurrouge");
-    cout << train.getName() << endl ;
+    std::srand(std::time(nullptr));
+    Pochtruc arthur= Pochtruc("Bob",10,2,2,50);
+    arthur.print();
 }

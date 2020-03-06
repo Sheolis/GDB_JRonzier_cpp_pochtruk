@@ -1,25 +1,34 @@
-#ifndef __MOTEUR_H_
-#define __MOTEUR_H_
+#ifndef __POCHTRUC_H_
+#define __POCHTRUC_H_
 
 #include <iostream>
 #include <vector>
 #include <string>
 
-class Moteur{
+class Pochtruc{
     private:
-        std::string a_name;
-        int a_temp;
-        int a_speed;
-        void acceleration();
+        std::string _name;
+        int _pv;
+        int _pvMax;
+        int _dmg;
+        int _speed;
+        int _loveChance;
+
     public:
-        Moteur(std::string texte);
-        std::string getName();
-        void setName(std::string newName);
-        int getTemp();
-        void setTemp(int newTemp);
-        int getSpeed();
-        void setSpeed(int newSpeed);
-        void startEngine();
+        Pochtruc(std::string texte, int pv_amount, int dmg_amount, int speed_amount, int love_stat);
+        void attack(Pochtruc& target);
+        void print();
+        std::string get_name();
+        void set_name(std::string _name);
+        int get_pv();
+        void set_pv(int _pv);
+        int get_dmg();
+        void set_dmg(int _dmg);
+        int get_speed();
+        void set_speed(int _speed);
+        int get_loveChance();
+        void set_loveChance(int _loveChance);
+        
 
 };
 
