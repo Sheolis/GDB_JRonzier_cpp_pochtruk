@@ -1,6 +1,7 @@
 #include "Poche.h"
 
-
+Poche::Poche( std::vector<Pochtruc* > list_pochtruc) :
+        _pochtruc_list(list_pochtruc) {};
 
 
 
@@ -11,14 +12,6 @@
 
 
 ////////////////////////////////////////////////////set/get
-int Poche::get_qty()
-{
-    return this->_qty;
-}
-void Poche::set_qty(int _qty)
-{
-    this->_qty = _qty;
-}
 
 
 std::vector<Pochtruc *> Poche::get_pochtruc_list()

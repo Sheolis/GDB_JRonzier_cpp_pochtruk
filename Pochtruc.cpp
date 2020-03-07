@@ -5,10 +5,6 @@ Pochtruc::Pochtruc(std::string texte, int pv_amount, int dmg_amount, int speed_a
     {};
 
 
-void Pochtruc::attack(std::string target_name){
-
-}
-
 
 void Pochtruc::print(){
     std::cout << "Pochtruc : " << _name << std::endl \
@@ -22,14 +18,14 @@ void Pochtruc::attack(Pochtruc& target){
     int roll = (std::rand() % 100) + 1;
     if ( roll > _loveChance)
     {
-        target.set_pv(target.get_pv - _dmg);
+        target.set_pv(target.get_pv() - _dmg);
     }else
     {
-        target.set_pv(target.get_pv + _dmg);
+        target.set_pv(target.get_pv() + _dmg);
     }
-    if (_pv > _pvMax)
+    if (target._pv > target._pvMax)
     {
-        _pv = _pvMax;
+        target.set_pv(_pvMax);
     }
     
 }
