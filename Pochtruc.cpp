@@ -13,6 +13,10 @@ void Pochtruc::print(){
         << "Speed : " << _speed << std::endl\
         << "love stat : " << _loveChance << "%" << std::endl;
 }
+int Pochtruc::isAlive(){
+    if (_pv > 0){return 1;}
+    return 0;
+}
 
 void Pochtruc::attack(Pochtruc& target){
     int roll = (std::rand() % 100) + 1;
@@ -22,6 +26,7 @@ void Pochtruc::attack(Pochtruc& target){
     }else
     {
         target.set_pv(target.get_pv() + _dmg);
+        std::cout << _name << "loves" << target.get_name() << std::endl ;
     }
     if (target._pv > target._pvMax)
     {

@@ -18,6 +18,7 @@ class Pochtruc{
         Pochtruc(std::string texte, int pv_amount, int dmg_amount, int speed_amount, int love_stat);
         void attack(Pochtruc& target);
         void print();
+        int isAlive();
         std::string get_name();
         void set_name(std::string _name);
         int get_pv();
